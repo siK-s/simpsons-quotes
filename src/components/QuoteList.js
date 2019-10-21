@@ -34,7 +34,6 @@ const quotes = [
   const QuoteList = () => (
     <div>
       {quotes.map(item => (
-        // <img key={item.character} src={item.image} alt={item.character} />
         <QuoteCard key={item.character} quote={item.quote} image={item.image} character={item.character} />
       ))}
     </div>
