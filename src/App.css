@@ -1,5 +1,5 @@
 .App {
-  text-align: center;
+  /* text-align: center; */
 }
 
 .App-logo {
@@ -19,4 +19,15 @@
 
 .App-link {
   color: #09d3ac;
+}
+
+.App button {
+  margin: 0em 2em;
+  padding: .5em 1em;
+  background: #554478;
+  color: #fff;
+  border: 0;
+  border-radius: 2px;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.15);
+  font-size: 1.2em;
 }

@@ -1,4 +1,6 @@
 import React from 'react';
+import axios from 'axios';
+import './App.css';
 import Navbar from './components/Navbar';
 import DisplayQuotes from './components/DisplayQuotes';
 
@@ -16,6 +18,20 @@ class App extends React.Component {
     this.state = {
       quote: sampleQuote
     };
+    this.getQuote = this.getQuote.bind(this);
+  }
+
+  getQuote() {
+    // Send the request
+    axios.get('https://quests.wilders.dev/simpsons-quotes/quotes')
+      // Extract the DATA from the received response
+      .then(response => response.data)
+      // Use this data to update the state
+      .then(data => {
+        this.setState({
+          quote: data[0],
+        });
+    });
   }
 
   render() {
@@ -23,6 +39,7 @@ class App extends React.Component {
       <div className="App">
         <Navbar />
         <DisplayQuotes quote={this.state.quote} />
+        <button type="button" onClick={this.getQuote}>Get quote</button>
       </div>
     );
   }
